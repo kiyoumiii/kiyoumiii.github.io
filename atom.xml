@@ -8,7 +8,187 @@
     <author>
       <name>kiyoumiii</name>
     </author>
-    <updated>2025-02-24T03:27:51.000Z</updated>
+    <updated>2025-02-26T07:09:37.000Z</updated>
+    <entry>
+        <id>https://kiyoumiii.github.io/2025/02/26/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5URL%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88/</id>
+        <title>浏览器输入URL会发生什么</title>
+        <link rel="alternate" href="https://kiyoumiii.github.io/2025/02/26/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%BE%93%E5%85%A5URL%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88/"/>
+        <content type="html">&lt;h1 id=&#34;输入一个url会发生什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#输入一个url会发生什么&#34;&gt;#&lt;/a&gt; 输入一个 url 会发生什么&lt;/h1&gt;
+&lt;p&gt;本问题在之前的学习合集文章 ———— 计算机网络与浏览器原理篇有过总结，因为本问题经典、关键、常见，所以此处单独开一篇博文再次作以更为详细的总结～&lt;/p&gt;
+&lt;h2 id=&#34;输入一个url会发生什么-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#输入一个url会发生什么-2&#34;&gt;#&lt;/a&gt; 输入一个 url 会发生什么？&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;URL 解析&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;浏览器解析用户输入的 URL，提取协议（如 http 或 https）、域名（如 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dvb2dsZS5jb20=&#34;&gt;google.com&lt;/span&gt;）、端口（默认 80 或 443）、路径和查询参数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;输入 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9zZWFyY2g/cT12dWUlRUYlQkMlOEMlRTYlQjUlOEYlRTglQTclODglRTUlOTklQTglRTQlQkMlOUElRTglQTclQTMlRTYlOUUlOTAlRTUlODclQkElRUYlQkMlOUE=&#34;&gt;https://www.google.com/search?q=vue，浏览器会解析出：&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;协议：https&lt;/p&gt;
+&lt;p&gt;域名：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5nb29nbGUuY29t&#34;&gt;www.google.com&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;路径：/search&lt;/p&gt;
+&lt;p&gt;查询参数：q=vue&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;DNS 查询&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;浏览器通过 DNS（域名系统）将域名解析为对应的 IP 地址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果本地缓存中有域名对应的 IP 地址，则直接使用；否则，浏览器会向 DNS 服务器发起查询请求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;解析 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5nb29nbGUuY29t&#34;&gt;www.google.com&lt;/span&gt; 可能会返回 142.250.190.78。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;建立 TCP 连接&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;浏览器通过 IP 地址和端口与服务器建立 TCP 连接。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果是 HTTPS，还会进行 TLS 握手，建立加密通道。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;与 142.250.190.78:443 建立 TCP 连接，并进行 TLS 握手。&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;发送 HTTP 请求&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;浏览器向服务器发送 HTTP 请求，包括请求方法（如 GET）、路径、请求头和请求体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;发送 GET /search?q=vue HTTP/1.1 请求。&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;服务器处理请求&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;服务器接收到请求后，根据路径和参数处理请求，生成响应数据（如 HTML 页面）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;服务器返回 HTTP 响应，包括状态码（如 200）、响应头和响应体。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;服务器返回 200 OK 和 Google 搜索结果的 HTML 页面。&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;浏览器接收响应&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;浏览器接收到服务器的响应后，开始解析响应内容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果是 HTML 页面，浏览器会解析 HTML、CSS 和 JavaScript，并加载页面所需的资源（如图片、样式表、脚本等）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;解析 Google 搜索结果的 HTML，并加载相关资源。&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;渲染页面&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;浏览器根据 HTML 和 CSS 构建 DOM 树和 CSSOM 树，然后合并生成渲染树。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;根据渲染树计算布局，绘制页面内容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;执行 JavaScript 代码，动态更新页面。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;渲染 Google 搜索结果的页面，并显示给用户。&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;加载完成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;页面加载完成后，触发 load 事件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果有异步操作（如 AJAX 请求），页面可能会继续更新。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;Google 搜索页面加载完成后，用户可以与页面交互。&lt;/p&gt;
+&lt;h2 id=&#34;如果-url-是-googlecom-会有什么不同&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#如果-url-是-googlecom-会有什么不同&#34;&gt;#&lt;/a&gt; 如果 URL 是 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dvb2dsZS5jb20=&#34;&gt;google.com&lt;/span&gt; 会有什么不同？&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;域名解析：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;浏览器会解析 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dvb2dsZS5jb20=&#34;&gt;google.com&lt;/span&gt;，但通常会重定向到 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5nb29nbGUuY29t&#34;&gt;www.google.com&lt;/span&gt;（Google 的主域名）。&lt;/p&gt;
+&lt;p&gt;例如，输入 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dvb2dsZS5jb20=&#34;&gt;google.com&lt;/span&gt; 后，浏览器可能会收到 301 或 302 重定向响应，指向 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==&#34;&gt;https://www.google.com&lt;/span&gt;。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;HTTPS 强制跳转：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Google 会强制使用 HTTPS，因此即使输入 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dvb2dsZS5jb20=&#34;&gt;http://google.com&lt;/span&gt;，浏览器也会重定向到 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==&#34;&gt;https://www.google.com&lt;/span&gt;。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;首页内容：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果访问的是 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==&#34;&gt;https://www.google.com&lt;/span&gt;，服务器会返回 Google 搜索首页的 HTML 页面。&lt;/p&gt;
+&lt;p&gt;页面内容相对简单，主要是搜索框和一些链接。&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;资源加载：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Google 首页的资源（如图片、CSS、JavaScript）通常较少，加载速度较快。&lt;/p&gt;
+&lt;p&gt;Google 会使用 CDN 和缓存技术，进一步加速页面加载。&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;用户体验：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Google 首页设计简洁，加载速度快，用户可以立即进行搜索操作。&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h2&gt;
+&lt;p&gt;输入 URL 后，浏览器会执行以下步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;URL 解析：提取协议、域名、路径等信息。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DNS 查询：将域名解析为 IP 地址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;建立 TCP 连接：与服务器建立连接（HTTPS 还会进行 TLS 握手）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;发送 HTTP 请求：向服务器发送请求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;服务器处理请求：服务器生成响应并返回。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;浏览器接收响应：解析 HTML、CSS 和 JavaScript。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;渲染页面：构建 DOM 树、CSSOM 树，绘制页面。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加载完成：页面显示并触发 load 事件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果 URL 是 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dvb2dsZS5jb20=&#34;&gt;google.com&lt;/span&gt;，浏览器会重定向到 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==&#34;&gt;https://www.google.com&lt;/span&gt;，并加载 Google 搜索首页。由于 Google 的优化措施（如 CDN、缓存、简洁设计），页面加载速度会非常快。&lt;/p&gt;
+</content>
+        <category term="计算机科学" scheme="https://kiyoumiii.github.io/categories/computer-science/" />
+        <category term="计算机网络" scheme="https://kiyoumiii.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" />
+        <updated>2025-02-26T07:09:37.000Z</updated>
+    </entry>
     <entry>
         <id>https://kiyoumiii.github.io/2025/02/24/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95-AI%E5%91%BD%E7%90%86%E5%B8%88/</id>
         <title>开发问题记录-AI命理师</title>
@@ -18,11 +198,11 @@
 &lt;p&gt;可以直接把原型图和多个组件 add 到 chat 台，选择 Claude-3.5 或 GPT-4o 来帮忙生成回答和代码。&lt;/p&gt;
 &lt;br&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.csgruxtyffdi{}&lt;/style&gt;&lt;img data-src=&#34;/2025/02/24/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95-AI%E5%91%BD%E7%90%86%E5%B8%88/cursor-1.jpg&#34; class=&#34;csgruxtyffdi&#34;&gt;
+    &lt;style&gt;.glxyjzmarkik{}&lt;/style&gt;&lt;img data-src=&#34;/2025/02/24/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95-AI%E5%91%BD%E7%90%86%E5%B8%88/cursor-1.jpg&#34; class=&#34;glxyjzmarkik&#34;&gt;
 &lt;/div&gt;
 &lt;br&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.orhgrmsomeui{}&lt;/style&gt;&lt;img data-src=&#34;/2025/02/24/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95-AI%E5%91%BD%E7%90%86%E5%B8%88/aichat.jpg&#34; class=&#34;orhgrmsomeui&#34;&gt;
+    &lt;style&gt;.yghwugctoqur{}&lt;/style&gt;&lt;img data-src=&#34;/2025/02/24/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95-AI%E5%91%BD%E7%90%86%E5%B8%88/aichat.jpg&#34; class=&#34;yghwugctoqur&#34;&gt;
 &lt;/div&gt;
 &lt;br&gt;
 &lt;p&gt;记录一个借助 chatgpt-4o 解决的小问题：&lt;/p&gt;
@@ -296,29 +476,29 @@ flex-grow: 0; // 不放大&lt;br /&gt;
 &lt;p&gt;安装依赖并运行：&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;npm&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;install&lt;/span&gt; &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nodemon app.js&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;得到如下输出说明启动成功：&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.uqlyilvufphh{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/01.png&#34; class=&#34;uqlyilvufphh&#34;&gt;
+    &lt;style&gt;.gbouwyhjvwjx{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/01.png&#34; class=&#34;gbouwyhjvwjx&#34;&gt;
 &lt;/div&gt;
 &lt;h4 id=&#34;微信小程序端-微信公众平台-微信开发者工具&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#微信小程序端-微信公众平台-微信开发者工具&#34;&gt;#&lt;/a&gt; 微信小程序端 - 微信公众平台、微信开发者工具&lt;/h4&gt;
 &lt;p&gt;注册微信小程序，配置 appID 和密钥；在阿里云创建智能语音交互项目，并将第三方服务器域名配置在微信小程序的服务器域名配置栏，同时配置图床 url：&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.dhogokfxsbcy{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/02.png&#34; class=&#34;dhogokfxsbcy&#34;&gt;
+    &lt;style&gt;.rnruwfwueyal{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/02.png&#34; class=&#34;rnruwfwueyal&#34;&gt;
 &lt;/div&gt;
 &lt;h4 id=&#34;跨端启动-hbuilderx&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#跨端启动-hbuilderx&#34;&gt;#&lt;/a&gt; 跨端启动 - HBuilderX&lt;/h4&gt;
 &lt;p&gt;将微信小程序端代码拖入 HBuilderX，通过 ipconfig 查看自己的 IPv4 地址为项目配置 baseURL&lt;/p&gt;
 &lt;p&gt;通过 uni-app 实现跨端，在 mainfest.json 配置对应的微信小程序 appID，选择运行到小程序模拟器 - 微信开发者工具，自动启动微信开发者工具编译项目。&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.nrwjuhcfqldd{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/03.png&#34; class=&#34;nrwjuhcfqldd&#34;&gt;
+    &lt;style&gt;.yxegslxstpps{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/03.png&#34; class=&#34;yxegslxstpps&#34;&gt;
 &lt;/div&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.yoqpwtdplvgv{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/04.png&#34; class=&#34;yoqpwtdplvgv&#34;&gt;
+    &lt;style&gt;.rizygcfjbfzi{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/04.png&#34; class=&#34;rizygcfjbfzi&#34;&gt;
 &lt;/div&gt;
 &lt;p&gt;项目最终在微信开发者工具中呈现。&lt;/p&gt;
 &lt;p&gt;注意：设置微信开发者工具为没有代理、开启服务端口；在右侧点击 “详情” 查看配置，在本地配置下勾选不校验合法域名；注意 appID 一定要和 vscode 以及 HBuilderX 中配置的 appID 是一致的。&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.ifrowqahvsax{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/05.png&#34; class=&#34;ifrowqahvsax&#34;&gt;
+    &lt;style&gt;.xxplgueqwvvd{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/05.png&#34; class=&#34;xxplgueqwvvd&#34;&gt;
 &lt;/div&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.vlmwpejpgkld{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/06.png&#34; class=&#34;vlmwpejpgkld&#34;&gt;
+    &lt;style&gt;.bpxbjpygfplu{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/%E5%9F%BA%E4%BA%8ENodejs-vue3-uniapp%E7%9A%84%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%A8%E6%A0%88%E5%BC%80%E5%8F%91%E9%85%8D%E7%BD%AE%E5%B8%96/06.png&#34; class=&#34;bpxbjpygfplu&#34;&gt;
 &lt;/div&gt;
 &lt;p&gt;撒花！！！&lt;/p&gt;
 </content>
@@ -334,7 +514,7 @@ flex-grow: 0; // 不放大&lt;br /&gt;
 &lt;p&gt;一篇在研一初期阅读到的文章，发表在《自然神经科学》杂志，它以一种 “神奇的 AI 读心术” 的形式，给我与朋友留下了深刻的印象。研二寒假闲暇，将它简单整理下来作以记录。&lt;/p&gt;
 &lt;p&gt;德克萨斯大学奥斯汀分校的研究者开发了一种基于 GPT 的语言解码器，它能通过非侵入性的 MRI/fMRI 收集大脑活动信息，并将思维转化为语言文字，准确率高达 82%。这项技术有望为失去语言能力或无法外部沟通的人提供一种新的交流方式，同时也为认知神经科学和人工智能领域带来了新的突破。&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.kkxevrsubpcx{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/FMRI2TXT-%E9%9D%9E%E4%BE%B5%E5%85%A5%E6%80%A7%E8%AF%AD%E8%A8%80%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3/01.jpg&#34; class=&#34;kkxevrsubpcx&#34;&gt;
+    &lt;style&gt;.wlgtafpwqthn{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/FMRI2TXT-%E9%9D%9E%E4%BE%B5%E5%85%A5%E6%80%A7%E8%AF%AD%E8%A8%80%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3/01.jpg&#34; class=&#34;wlgtafpwqthn&#34;&gt;
 &lt;/div&gt;
 &lt;h4 id=&#34;背景补充&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#背景补充&#34;&gt;#&lt;/a&gt; 背景补充：&lt;/h4&gt;
 &lt;p&gt;大脑解码技术可以通过不同的方法来实现。这其中主要分为三类：侵入式脑机接口，非侵入式脑机接口，以及用于研究神经元活动的大脑解码技术。&lt;/p&gt;
@@ -345,7 +525,7 @@ flex-grow: 0; // 不放大&lt;br /&gt;
 &lt;p&gt;为了克服这个难题，德克萨斯大学奥斯汀分校的研究者利用了一个先进的 AI 语言模型 ——GPT-1。GPT 是由 OpenAI 实验室开发的一个基于深度学习的文本生成系统，它可以根据给定的上下文生成连贯和流畅的自然语言。研究者将 GPT 与 fMRI 图像进行了训练和匹配，从而构建了一个语言解码器。&lt;/p&gt;
 &lt;h4 id=&#34;实验设计&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实验设计&#34;&gt;#&lt;/a&gt; 实验设计：&lt;/h4&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.lvndhiewokfq{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/FMRI2TXT-%E9%9D%9E%E4%BE%B5%E5%85%A5%E6%80%A7%E8%AF%AD%E8%A8%80%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3/02.jpg&#34; class=&#34;lvndhiewokfq&#34;&gt;
+    &lt;style&gt;.jtlgyekpkvck{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/20/FMRI2TXT-%E9%9D%9E%E4%BE%B5%E5%85%A5%E6%80%A7%E8%AF%AD%E8%A8%80%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3/02.jpg&#34; class=&#34;jtlgyekpkvck&#34;&gt;
 &lt;/div&gt;
 &lt;p&gt;首先，在实验前期，研究者让参与者在 fMRI 扫描仪中听或想一些故事，并记录下他们的大脑活动；&lt;/p&gt;
 &lt;p&gt;然后，在实验后期，研究者给出一些新的故事，并让参与者再次听或想，并记录下他们的大脑活动；&lt;/p&gt;
@@ -1312,7 +1492,7 @@ ES5 中新增了一个 Object.getPrototypeOf () 方法，可以通过这个方�
 &lt;p&gt;当访问一个对象的属性时，如果这个对象内部不存在这个属性，那么它就会去它的原型对象里找这个属性，这个原型对象又会有自己的原型，于是就这样一直找下去，也就是原型链的概念。原型链的尽头一般来说都是 Object.prototype 所以这就是新建的对象为什么能够使用 toString () 等方法的原因。&lt;/p&gt;
 &lt;p&gt;特点： JavaScript 对象是通过引用来传递的，创建的每个新对象实体中并没有一份属于自己的原型副本。当修改原型时，与之相关的对象也会继承这一改变。&lt;/p&gt;
 &lt;div align=center&gt;
-    &lt;style&gt;.ybqzptfvdbhi{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/09/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E4%B9%8BJS%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/01.jpg&#34; class=&#34;ybqzptfvdbhi&#34;&gt;
+    &lt;style&gt;.hojyfyiuirzn{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/09/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E4%B9%8BJS%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/01.jpg&#34; class=&#34;hojyfyiuirzn&#34;&gt;
 &lt;/div&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;原型修改、重写&lt;/li&gt;
@@ -1590,7 +1770,7 @@ let：块作用域，不提升，推荐在需要块作用域变量时使用。&l
 &lt;p&gt;根据这个原则，0.1 和 0.2 的二进制数相加，再转化为十进制数就是：0.30000000000000004。&lt;/p&gt;
 &lt;p&gt;下面看一下双精度数是如何保存的：&lt;/p&gt;
 &lt;div align=center&gt;
-    &lt;style&gt;.wfjcoxaljuma{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/07/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E4%B9%8BJS%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/01.jpg&#34; class=&#34;wfjcoxaljuma&#34;&gt;
+    &lt;style&gt;.vbckmgdqyfjf{}&lt;/style&gt;&lt;img data-src=&#34;/2025/01/07/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E4%B9%8BJS%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/01.jpg&#34; class=&#34;vbckmgdqyfjf&#34;&gt;
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;第一部分（蓝色）：用来存储符号位（sign），用来区分正负数，0 表示正数，占用 1 位&lt;/li&gt;
@@ -3269,7 +3449,7 @@ defineEmits 子组件向父组件事件传递：子传父&lt;/li&gt;
 &lt;h4 id=&#34;1-osi七层模型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-osi七层模型&#34;&gt;#&lt;/a&gt; 1. OSI 七层模型&lt;/h4&gt;
 &lt;p&gt;ISO 为了更好的使网络应用更为普及，推出了 OSI 参考模型。&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.cugifcgkuywp{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B.jpg&#34; class=&#34;cugifcgkuywp&#34;&gt;
+    &lt;style&gt;.uwydkyqymsqb{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B.jpg&#34; class=&#34;uwydkyqymsqb&#34;&gt;
 &lt;/div&gt;
 &lt;p&gt;（1）应用层&lt;br /&gt;
  OSI 参考模型中最靠近用户的一层，是为计算机用户提供应用接口，也为用户直接提供各种网络服务。&lt;br /&gt;
@@ -3297,7 +3477,7 @@ defineEmits 子组件向父组件事件传递：子传父&lt;/li&gt;
 &lt;h4 id=&#34;2-tcpip五层协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-tcpip五层协议&#34;&gt;#&lt;/a&gt; 2. TCP/IP 五层协议&lt;/h4&gt;
 &lt;p&gt;TCP/IP 五层协议和 OSI 的七层协议对应关系如下：&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.xtqfggorqdwt{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/TCP_IP_%E4%BA%94%E5%B1%82%E5%8D%8F%E8%AE%AE.jpg&#34; class=&#34;xtqfggorqdwt&#34;&gt;
+    &lt;style&gt;.tnayuuqdofcu{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/TCP_IP_%E4%BA%94%E5%B1%82%E5%8D%8F%E8%AE%AE.jpg&#34; class=&#34;tnayuuqdofcu&#34;&gt;
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;应用层 (application layer)：直接为应用进程提供服务。应用层协议定义的是应用进程间通讯和交互的规则，不同的应用有着不同的应用层协议，如 HTTP 协议（万维网服务）、FTP 协议（文件传输）、SMTP 协议（电子邮件）、DNS（域名查询）等。&lt;/li&gt;
@@ -3315,15 +3495,15 @@ defineEmits 子组件向父组件事件传递：子传父&lt;/li&gt;
 &lt;p&gt;&lt;strong&gt;从上图中可以看出，TCP/IP 模型比 OSI 模型更加简洁，它把应用层 / 表示层 / 会话层全部整合为了应用层。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在每一层都工作着不同的设备，比如我们常用的交换机就工作在数据链路层的，一般的路由器是工作在网络层的。&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.xqkxrbjtuwtd{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/03.jpg&#34; class=&#34;xqkxrbjtuwtd&#34;&gt;
+    &lt;style&gt;.fpxvssuyvmlw{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/03.jpg&#34; class=&#34;fpxvssuyvmlw&#34;&gt;
 &lt;/div&gt;
 &lt;p&gt;在每一层实现的协议也各不同，即每一层的服务也不同，下图列出了每层主要的传输协议：&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.jtdcmqungcae{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/04.jpg&#34; class=&#34;jtdcmqungcae&#34;&gt;
+    &lt;style&gt;.smeyvpxlrjmy{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/04.jpg&#34; class=&#34;smeyvpxlrjmy&#34;&gt;
 &lt;/div&gt;
 &lt;p&gt;同样，TCP/IP 五层协议的通信方式也是对等通信：&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.zfjyxiwhdeot{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/05.jpg&#34; class=&#34;zfjyxiwhdeot&#34;&gt;
+    &lt;style&gt;.ukmsivqwrrch{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/05.jpg&#34; class=&#34;ukmsivqwrrch&#34;&gt;
 &lt;/div&gt;
 &lt;h3 id=&#34;六-tcp与udp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#六-tcp与udp&#34;&gt;#&lt;/a&gt; 六、TCP 与 UDP&lt;/h3&gt;
 &lt;h4 id=&#34;1-tcp-和-udp的概念及特点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-tcp-和-udp的概念及特点&#34;&gt;#&lt;/a&gt; 1. TCP 和 UDP 的概念及特点&lt;/h4&gt;
@@ -3370,7 +3550,7 @@ UDP 头部包含了以下几个数据：&lt;/p&gt;
  TCP 允许通信双方的应用程序在任何时候都能发送数据，因为 TCP 连接的两端都设有缓存，用来临时存放双向通信的数据。当然，TCP 可以立即发送一个数据段，也可以缓存一段时间以便一次发送更多的数据段（最大的数据段大小取决于 MSS）&lt;/p&gt;
 &lt;h4 id=&#34;2-tcp和udp的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-tcp和udp的区别&#34;&gt;#&lt;/a&gt; 2. TCP 和 UDP 的区别&lt;/h4&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.uopsncnfimde{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/06.jpg&#34; class=&#34;uopsncnfimde&#34;&gt;
+    &lt;style&gt;.ccgdybcsqubp{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/06.jpg&#34; class=&#34;ccgdybcsqubp&#34;&gt;
 &lt;/div&gt;
 &lt;h4 id=&#34;3-tcp和udp的使用场景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-tcp和udp的使用场景&#34;&gt;#&lt;/a&gt; 3. TCP 和 UDP 的使用场景&lt;/h4&gt;
 &lt;ul&gt;
@@ -3414,7 +3594,7 @@ TCP 在发送一个数据之后，就开启一个定时器，若是在这个时�
 &lt;li&gt;无论是在慢开始阶段还是在拥塞避免阶段，只要发送方判断网络出现拥塞，就把慢开始门限设置为出现拥塞时的发送窗口大小的一半。然后把拥塞窗口设置为 1，执行慢开始算法。如图所示:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.sgfsurjtqzbg{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/07.jpg&#34; class=&#34;sgfsurjtqzbg&#34;&gt;
+    &lt;style&gt;.scwlwlsdhkyd{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/07.jpg&#34; class=&#34;scwlwlsdhkyd&#34;&gt;
 &lt;/div&gt;
 其中，判断网络出现拥塞的根据就是没有收到确认，虽然没有收到确认可能是其他原因的分组丢失，但是因为无法判定，所以都当做拥塞来处理。
 &lt;p&gt;（3）快速重传&lt;/p&gt;
@@ -3428,7 +3608,7 @@ TCP 在发送一个数据之后，就开启一个定时器，若是在这个时�
 &lt;li&gt;考虑到如果网络出现拥塞的话就不会收到好几个重复的确认，所以发送方现在认为网络可能没有出现拥塞。所以此时不执行慢开始算法，而是将 cwnd 设置为 ssthresh 的大小，然后执行拥塞避免算法。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.zfvasfnncmdf{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/08.jpg&#34; class=&#34;zfvasfnncmdf&#34;&gt;
+    &lt;style&gt;.eljvxywiutnj{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/08.jpg&#34; class=&#34;eljvxywiutnj&#34;&gt;
 &lt;/div&gt;
 &lt;h4 id=&#34;7-tcp的流量控制机制&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#7-tcp的流量控制机制&#34;&gt;#&lt;/a&gt; 7. TCP 的流量控制机制&lt;/h4&gt;
 &lt;p&gt;一般来说，流量控制就是为了让发送方发送数据的速度不要太快，要让接收方来得及接收。TCP 采用大小可变的滑动窗口进行流量控制，窗口大小的单位是字节。这里说的窗口大小其实就是每次传输的数据大小。&lt;/p&gt;
@@ -3447,7 +3627,7 @@ TCP 协议在发送方维持了一个发送窗口，发送窗口以前的报文�
 &lt;h4 id=&#34;9-tcp的三次握手和四次挥手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#9-tcp的三次握手和四次挥手&#34;&gt;#&lt;/a&gt; 9. TCP 的三次握手和四次挥手&lt;/h4&gt;
 &lt;p&gt;（1）三次握手&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.huzojyyudkfi{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/09.jpg&#34; class=&#34;huzojyyudkfi&#34;&gt;
+    &lt;style&gt;.jyvzurvebkvh{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/09.jpg&#34; class=&#34;jyvzurvebkvh&#34;&gt;
 &lt;/div&gt;
 （Three-way Handshake）其实就是指建立一个TCP连接时，需要客户端和服务器总共发送3个包。进行三次握手的主要作用就是为了确认双方的接收能力和发送能力是否正常、指定自己的初始化序列号为后面的可靠性传送做准备。实质上其实就是连接服务器指定端口，建立TCP连接，并同步连接双方的序列号和确认号，交换TCP窗口大小信息。
 &lt;p&gt;刚开始客户端处于 Closed 的状态，服务端处于 Listen 状态。&lt;/p&gt;
@@ -3478,7 +3658,7 @@ TCP 协议在发送方维持了一个发送窗口，发送窗口以前的报文�
 &lt;p&gt;TCP 三次握手的建立连接的过程就是相互确认初始序号的过程，告诉对方，什么样序号的报文段能够被正确接收。 第三次握手的作用是客户端对服务器端的初始序号的确认。如果只使用两次握手，那么服务器就没有办法知道自己的序号是否 已被确认。同时这样也是为了防止失效的请求报文段被服务器接收，而出现错误的情况。&lt;/p&gt;
 &lt;p&gt;（2）四次挥手&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.tvmkqffhotlj{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/10.jpg&#34; class=&#34;tvmkqffhotlj&#34;&gt;
+    &lt;style&gt;.bwntorohormo{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%BA%8C%EF%BC%89/10.jpg&#34; class=&#34;bwntorohormo&#34;&gt;
 &lt;/div&gt;
 &lt;p&gt;刚开始方都处于 ESTABLISHED 状态，假如是客户端先发起关闭请求。四次挥手的过程如下：&lt;/p&gt;
 &lt;ul&gt;
@@ -3827,7 +4007,7 @@ IE 对 URL 长度的限制是 2083 字节 (2K+35)。由于 IE 浏览器对 URL �
 管道（pipeline）网络传输是指：可以在同一个 TCP 连接里面，客户端可以发起多个请求，只要第一个请求发出去了，不必等其回来，就可以发第二个请求出去，可以减少整体的响应时间。但是服务器还是按照顺序回应请求。如果前面的回应特别慢，后面就会有许多请求排队等着。这称为队头堵塞。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.sjsppxsexqqz{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/http1%E9%95%BF%E7%9F%AD%E8%BF%9E%E6%8E%A5.jpg&#34; class=&#34;sjsppxsexqqz&#34;&gt;
+    &lt;style&gt;.wwissvhvafua{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/http1%E9%95%BF%E7%9F%AD%E8%BF%9E%E6%8E%A5.jpg&#34; class=&#34;wwissvhvafua&#34;&gt;
 &lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;队头堵塞&lt;br /&gt;
@@ -3863,7 +4043,7 @@ IE 对 URL 长度的限制是 2083 字节 (2K+35)。由于 IE 浏览器对 URL �
 &lt;h4 id=&#34;1-什么是https协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-什么是https协议&#34;&gt;#&lt;/a&gt; 1. 什么是 HTTPS 协议？&lt;/h4&gt;
 &lt;p&gt;超文本传输安全协议（Hypertext Transfer Protocol Secure，简称：HTTPS）是一种通过计算机网络进行安全通信的传输协议。HTTPS 经由 HTTP 进行通信，利用 SSL/TLS 来加密数据包。HTTPS 的主要目的是提供对网站服务器的身份认证，保护交换数据的隐私与完整性。&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.fwdouwpkonhw{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/HTTP%E4%B8%8EHTTPS.jpg&#34; class=&#34;fwdouwpkonhw&#34;&gt;
+    &lt;style&gt;.qqfxpnwldpmc{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/HTTP%E4%B8%8EHTTPS.jpg&#34; class=&#34;qqfxpnwldpmc&#34;&gt;
 &lt;/div&gt;
 &lt;p&gt;HTTP 协议采用明文传输信息，存在信息窃听、信息篡改和信息劫持的风险，而协议 TLS/SSL 具有身份验证、信息加密和完整性校验的功能，可以避免此类问题发生。而协议 TLS/SSL 具有身份验证、信息加密和完整性校验的功能，可以避免此类问题发生。&lt;/p&gt;
 &lt;p&gt;安全层的主要职责就是对发起的 HTTP 请求的数据进行加密操作 和 对接收到的 HTTP 的内容进行解密操作。&lt;/p&gt;
@@ -3876,7 +4056,7 @@ IE 对 URL 长度的限制是 2083 字节 (2K+35)。由于 IE 浏览器对 URL �
 &lt;li&gt;非对称加密实现身份认证和秘钥协商&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.jxntwplhvgtx{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/TLS%E5%8A%A0%E5%AF%86.jpg&#34; class=&#34;jxntwplhvgtx&#34;&gt;
+    &lt;style&gt;.dozbpphzziee{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/TLS%E5%8A%A0%E5%AF%86.jpg&#34; class=&#34;dozbpphzziee&#34;&gt;
 &lt;/div&gt;
 &lt;p&gt;（1）散列函数 hash&lt;br /&gt;
  常见的散列函数有 MD5、SHA1、SHA256。该函数的特点是单向不可逆，对输入数据非常敏感，输出的长度固定，任何数据的修改都会改变散列函数的结果，可以用于防止信息篡改并验证数据的完整性。&lt;br /&gt;
@@ -3941,7 +4121,7 @@ HTTPS 的缺点如下：&lt;/li&gt;
 &lt;h3 id=&#34;三-http状态码&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三-http状态码&#34;&gt;#&lt;/a&gt; 三、HTTP 状态码&lt;/h3&gt;
 &lt;p&gt;状态码的类别：&lt;/p&gt;
 &lt;div align=&#34;center&#34;&gt;
-    &lt;style&gt;.xtomkifrlivx{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/%E7%8A%B6%E6%80%81%E7%A0%81%E7%B1%BB%E5%88%AB.jpg&#34; class=&#34;xtomkifrlivx&#34;&gt;
+    &lt;style&gt;.bfnppyqhmtjk{}&lt;/style&gt;&lt;img data-src=&#34;/2024/12/31/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%B1%87%E6%80%BB-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/%E7%8A%B6%E6%80%81%E7%A0%81%E7%B1%BB%E5%88%AB.jpg&#34; class=&#34;bfnppyqhmtjk&#34;&gt;
 &lt;/div&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -4094,23 +4274,5 @@ IIS 定义了许多不同的 403 错误，它们指明更为具体的错误原�
         <category term="计算机科学" scheme="https://kiyoumiii.github.io/categories/computer-science/" />
         <category term="前端" scheme="https://kiyoumiii.github.io/tags/%E5%89%8D%E7%AB%AF/" />
         <updated>2024-12-31T06:06:28.000Z</updated>
-    </entry>
-    <entry>
-        <id>https://kiyoumiii.github.io/2024/12/28/%E8%87%AA%E7%94%A8%E5%B8%B8%E5%A4%87linux%E5%91%BD%E4%BB%A4/</id>
-        <title>自用常备linux命令</title>
-        <link rel="alternate" href="https://kiyoumiii.github.io/2024/12/28/%E8%87%AA%E7%94%A8%E5%B8%B8%E5%A4%87linux%E5%91%BD%E4%BB%A4/"/>
-        <content type="html">&lt;h2 id=&#34;自用的一些常备linux命令&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自用的一些常备linux命令&#34;&gt;#&lt;/a&gt; 自用的一些常备 linux 命令&lt;/h2&gt;
-&lt;p&gt;基本命令如 cd ls pwd mkdir rm cp mv touch 等&lt;/p&gt;
-&lt;p&gt;以及如下这些：&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 查看设备空间使用情况&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;df&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-h&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 查看本计算节点使用情况&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;top&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 查看文件的生成时间戳&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;stat&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;filename&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 查看进程&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ps&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-ef&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;grep&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;work12.sh&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 杀死进程&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;kill&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;pid&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 杀死用户为 &amp; lt;username &gt; 的进程&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;pkill&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-u&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;lt;&lt;/span&gt;username&lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 查看 CPU 核数&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;nproc&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 运行任务&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;-1 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work1.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;-3 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work2.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;-5 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work3.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;-7 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work4.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;-9 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work5.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;-11 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work6.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;12&lt;/span&gt;-13 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work7.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;14&lt;/span&gt;-15 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work8.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;16&lt;/span&gt;-17 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work9.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;18&lt;/span&gt;-19 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work10.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;20&lt;/span&gt;-21 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work11.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;22&lt;/span&gt;-23 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work12.sh &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt;/dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;清除原本的 minimized_pdb 文件，以及，查看当下文件中 minimized_pdb 文件数量的命令：&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;find&lt;/span&gt; &lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-type&lt;/span&gt; f &lt;span class=&#34;token parameter variable&#34;&gt;-name&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;*_minimized.pdb&#39;&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-exec&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;rm&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-f&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;&amp;#125;&lt;/span&gt; +&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;find&lt;/span&gt; &lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-type&lt;/span&gt; f &lt;span class=&#34;token parameter variable&#34;&gt;-name&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;*_minimized.pdb&#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;wc&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-l&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;限时 60s，并指定每个任务占据核的编号&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 前 8 个任务，每个任务使用 2 个核心&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;-1 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work1.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;-3 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work2.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;4&lt;/span&gt;-5 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work3.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;6&lt;/span&gt;-7 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work4.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;8&lt;/span&gt;-9 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work5.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;10&lt;/span&gt;-11 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work6.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;12&lt;/span&gt;-13 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work7.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;14&lt;/span&gt;-15 &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work8.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 后 8 个任务，每个任务使用 1 个核心&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;16&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work9.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;17&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work10.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;18&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work11.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;19&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work12.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;16&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;20&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work13.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;17&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;21&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work14.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;18&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;22&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work15.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;19&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;timeout&lt;/span&gt; 60s taskset &lt;span class=&#34;token parameter variable&#34;&gt;-c&lt;/span&gt; &lt;span class=&#34;token number&#34;&gt;23&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sh&lt;/span&gt; work16.sh &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;20&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;21&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 等待所有后台任务完成&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;22&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;wait&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;查看当下文件夹下每个文件占据多少空间&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;du&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-h&lt;/span&gt; --max-depth&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;sort&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-hr&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;常用的一套命令&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;find&lt;/span&gt; &lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-type&lt;/span&gt; f &lt;span class=&#34;token parameter variable&#34;&gt;-name&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;*_center.pdb&#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;wc&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-l&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;rsync&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-auvh&lt;/span&gt; *_center.pdb &lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;/recon11_5w_center/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; get&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tab补全&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;module load Anaconda3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;conda activate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;vim&lt;/span&gt; minimi_dihe&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;tab补全&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;module load NAMD/CPU/2.14&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;ps&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-ef&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;grep&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;work12.sh&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;find&lt;/span&gt; &lt;span class=&#34;token builtin class-name&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-type&lt;/span&gt; f &lt;span class=&#34;token parameter variable&#34;&gt;-name&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#39;*_minimized.pdb&#39;&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;token function&#34;&gt;wc&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-l&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;rsync&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-auvhz&lt;/span&gt; *_minimized.pdb zhaomiaomiao@XXXLab:/mnt/sto2/zhaomiaomiao/select_trainset_241203/mini4w_reconset/mini_pdbs/recon1_4w_pdb/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;13&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;rsync&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-auvhz&lt;/span&gt; *.log zhaomiaomiao@XXXLab:/mnt/sto2/zhaomiaomiao/select_trainset_241203/mini4w_reconset/mini_logs/recon1_4w_log/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;14&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;15&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;nohup&lt;/span&gt; namd2 +p4 work1.tcl &lt;span class=&#34;token operator&#34;&gt;&gt;&lt;/span&gt; /dev/null &lt;span class=&#34;token operator&#34;&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;2&lt;/span&gt;&gt;&lt;/span&gt;&lt;span class=&#34;token file-descriptor important&#34;&gt;&amp;amp;1&lt;/span&gt; &lt;span class=&#34;token operator&#34;&gt;&amp;amp;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;另一套命令&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;module load CUDA/11.0.0&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;module load VMD/1.9.3&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;vmd &lt;span class=&#34;token parameter variable&#34;&gt;-dispdev&lt;/span&gt; none &lt;span class=&#34;token parameter variable&#34;&gt;-e&lt;/span&gt; hbb_align2initial.tcl.txt&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;只需要传输文件（不包括文件夹及其子文件）&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token function&#34;&gt;rsync&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;-av&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;--progress&lt;/span&gt; &lt;span class=&#34;token parameter variable&#34;&gt;--exclude&lt;/span&gt;&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;*/&#39;&lt;/span&gt; ./ &lt;span class=&#34;token punctuation&#34;&gt;..&lt;/span&gt;/task2/&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-        <category term="计算机科学" scheme="https://kiyoumiii.github.io/categories/computer-science/" />
-        <category term="linux" scheme="https://kiyoumiii.github.io/tags/linux/" />
-        <updated>2024-12-28T10:43:12.000Z</updated>
     </entry>
 </feed>
